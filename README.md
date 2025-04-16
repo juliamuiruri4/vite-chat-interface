@@ -19,6 +19,27 @@ This template provides a simple, modern chat UI built with [Vite](https://vitejs
 - [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 - [Azure Developer CLI(azd)](https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/install-azd?tabs=winget-windows%2Cbrew-mac%2Cscript-linux&pivots=os-windows) installed
 
+### File Structure
+
+```markdown
+webapp/
+  ├── index.html
+  ├── package.json
+  ├── src/
+  │   ├── main.js
+  │   ├── index.css
+  │   ├── components/
+  │   │   ├── chat.js
+  │   │   └── chat.css
+  │   └── utils/
+  │       └── chatStore.js
+  └── public/
+      └── vite.svg
+```
+- `chat.js`: Main chat UI component
+- `chatStore.js`: Utilities for saving/loading chat history
+- `chat.css`: Styles for the chat UI 
+
 ### Get the Code
 
 If you already have the Azure Developer CLI installed on your machine, using this template is as simple as running this command in a new directory.
@@ -45,3 +66,7 @@ To deploy the app on Azure (Azure Static Web Apps), run:
 azd up
 ```
 This command will create the necessary Azure resources and deploy your app.
+
+### Usage
+
+The main chat component is **ChatInterface**. It stores messages in local storage and simulates AI responses. To connect to your own AI backend, replace the `_mockAiCall` method with your API call logic.
