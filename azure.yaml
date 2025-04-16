@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
+
+name: vite-chat-interface
+metadata:
+    template: azd-init@1.14.0
+services:
+    webapp:
+        project: webapp
+        host: staticwebapp
+        language: js
+        dist: dist
+        hooks:
+            predeploy:
+                windows:
+                    shell: pwsh
+                    run: npm run build
+                posix:
+                    shell: sh
+                    run: npm run build
