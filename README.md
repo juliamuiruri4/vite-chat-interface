@@ -42,15 +42,21 @@ webapp/
 
 ### Get the Code
 
-If you already have the Azure Developer CLI installed on your machine, using this template is as simple as running this command in a new directory.
+If you already have the Azure Developer CLI installed on your machine, first login and select your subscription using
 
 ```sh
-azd init -t vite-chat-interface
+azd auth login
+```
+
+then run this command in a new directory to initialize the project.
+
+```sh
+azd init -t juliamuiruri4/vite-chat-interface
 ```
 
 ### Run the App
 
-To start the development server, run:
+To start the development server, inside the project directory (root) run:
 
 ```sh
 cd webapp
